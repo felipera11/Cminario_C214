@@ -66,19 +66,22 @@ class TestDiv(unittest.TestCase):
         self.assertEqual(res,3)
 
 
+class TestPot(unittest.TestCase):
+    def test_potencia(self):
+        res = Calculator.power(3,3)
+        self.assertEqual(res,27)
 
-''' 
-    def power(self, a, b):
-        return a ** b
-    
-    def factorial(self, a):
-        if a < 0:
-            raise ValueError("Factorial of negative number")
-        if a == 0:
-            return 1
-        return a * self.factorial(a - 1)
-    
-    def isPrime(self, a):
+
+class TestFatorial(unittest.TestCase):
+    def test_fatNeg(self):
+        self.assertRaises(Exception,Calculator.factorial(-1))
+
+    def test_fat(self):
+        res = Calculator.factorial(5)
+        self.assertEqual(res,120)
+
+
+''' def isPrime(self, a):
         if a < 2:
             return False
         for i in range(2, a):
@@ -118,4 +121,4 @@ class TestDiv(unittest.TestCase):
     
     def isMultiple(self, a, b):
         return b % a == 0
-    '''
+'''
