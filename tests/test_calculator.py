@@ -21,7 +21,7 @@ class TestSub(unittest.TestCase):
         self.calculator = Calculator()
     def test_subPrimMenor(self):
         res = self.calculator.subtract(3,8)
-        self.assertEqual(res,-2)
+        self.assertEqual(res,-5)
     
     def test_subSegMenor(self):
         res = self.calculator.subtract(7,3)
@@ -131,25 +131,52 @@ class TestFibonacci(unittest.TestCase):
         self.assertEqual(res,8)
 
 
-''' 
-    
-    def fibonacci(self, a):
-        if a < 0:
-            raise ValueError("Fibonacci of negative number")
-        if a == 0:
-            return 0
-        if a == 1:
-            return 1
-        return self.fibonacci(a - 1) + self.fibonacci(a - 2)
-    
-    def isEven(self, a):
-        return a % 2 == 0
-    
-    def isOdd(self, a):
-        return a % 2 != 0
-    
-    def isPalindrome(self, a):
-        return str(a) == str(a)[::-1]
+
+class TestPar(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_evenFalse(self):
+        res = self.calculator.fibonacci(3)
+        self.assertFalse(res)
+
+    def test_evenTrue(self):
+        res = self.calculator.isEven(6)
+        self.assertTrue(res)
+
+
+class TestImpar(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_evenFalse(self):
+        res = self.calculator.fibonacci(100)
+        self.assertFalse(res)
+
+    def test_evenTrue(self):
+        res = self.calculator.isEven(999)
+        self.assertTrue(res)
+
+
+class TestPalindrome(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_Palind(self):
+        res = self.calculator.isPalindrome("socorram me subi no onibus em marrocos")
+        self.assertFTrue(res)
+
+    @unittest.expectedFailure
+    def test_naoPalind(self):
+        res = self.calculator.isEven("hello world")
+        self.assertTrue(res)
+
+
+
+
+
+
+'''   
     
     def isPositive(self, a):
         return a > 0
