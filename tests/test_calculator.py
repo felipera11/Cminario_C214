@@ -1,5 +1,5 @@
 import unittest
-from calculator import Calculator
+from src.calculator import Calculator
 
 class TestAdd(unittest.TestCase):
     def test_sumPos(self):
@@ -87,17 +87,16 @@ class TestPot(unittest.TestCase):
         self.assertTrue(res)
 
 
+class TestFibonacci(unittest.TestCase):
+    def test_fibNeg(self):
+        self.assertRaises(Exception,Calculator.factorial(-1))
+
+    def test_fib(self):
+        res = Calculator.fibonacci(6)
+        self.assertEqual(res,5)
 
 
-
-
-''' def isPrime(self, a):
-        if a < 2:
-            return False
-        for i in range(2, a):
-            if a % i == 0:
-                return False
-        return True
+''' 
     
     def fibonacci(self, a):
         if a < 0:
