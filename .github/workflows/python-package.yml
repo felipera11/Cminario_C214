@@ -42,5 +42,12 @@ jobs:
 
     - name: Generate Report
       run: |
-        python -m coverage report
+        python -m coverage report > coverage_report.txt
+
+    - name: Upload Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: coverage-report
+        path: coverage_report.txt
+      
         
