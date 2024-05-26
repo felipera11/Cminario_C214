@@ -1,9 +1,10 @@
 import unittest
 from src.calculator import Calculator
 
+
 class TestAdd(unittest.TestCase):
     def setUp(self):
-        self.calculator = Calculator()
+        self.self.calculator = self.calculator()
 
     def test_sumPos(self):
         res = self.calculator.add(3,5)
@@ -16,86 +17,113 @@ class TestAdd(unittest.TestCase):
 
 
 class TestSub(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
     def test_subPrimMenor(self):
-        res = Calculator.subtract(3,8)
+        res = self.calculator.subtract(3,8)
         self.assertEqual(res,-2)
     
     def test_subSegMenor(self):
-        res = Calculator.subtract(7,3)
+        res = self.calculator.subtract(7,3)
         self.assertEqual(res,4)
     
     def test_subSegundoNeg(self):
-        res = Calculator.subtract(30,-5)
+        res = self.calculator.subtract(30,-5)
         self.assertEqual(res,35)
 
 
 
 class TestMul(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
+
     def test_porZero1(self):
-        res = Calculator.multiply(0,8)
+        res = self.calculator.multiply(0,8)
         self.assertEqual(res,0)
 
     def test_porZero2(self):
-        res = Calculator.multiply(4,0)
+        res = self.calculator.multiply(4,0)
         self.assertEqual(res,0)
     
     def test_doisNeg(self):
-        res = Calculator.multiply(-3,-5)
+        res = self.calculator.multiply(-3,-5)
         self.assertEqual(res,15)
 
     def test_umNeg(self):
-        res = Calculator.multiply(-3,5)
+        res = self.calculator.multiply(-3,5)
         self.assertEqual(res,-15)
 
 
 class TestDiv(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
     def test_porZero(self):
-        self.assertRaises(Exception,Calculator.divide(1,0))
+        self.assertRaises(Exception,self.calculator.divide(1,0))
 
     def test_div(self):
-        res = Calculator.divide(150,30)
+        res = self.calculator.divide(150,30)
+
 
 class TestSquare(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
+
     def test_quadrado(self):
-        res = Calculator.square(8)
+        res = self.calculator.square(8)
         self.assertEqual(res,64)
 
+
 class TestDiv(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
+
     def test_raizNeg(self):
-        self.assertRaises(Exception,Calculator.squareRoot(-9))
+        self.assertRaises(Exception,self.calculator.squareRoot(-9))
 
     def test_raiz(self):
-        res = Calculator.squareRoot(9)
+        res = self.calculator.squareRoot(9)
         self.assertEqual(res,3)
 
 
 class TestPot(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
+
     def test_potencia(self):
-        res = Calculator.power(3,3)
+        res = self.calculator.power(3,3)
         self.assertEqual(res,27)
 
 
 class TestFatorial(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()  
+
     def test_fatNeg(self):
-        self.assertRaises(Exception,Calculator.factorial(-1))
+        self.assertRaises(Exception,self.calculator.factorial(-1))
 
     def test_fat(self):
-        res = Calculator.factorial(5)
+        res = self.calculator.factorial(5)
         self.assertEqual(res,120)
 
 class TestPot(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
+
     @unittest.expectedFailure
     def test_primo(self):
-        res = Calculator.power(1)
+        res = self.calculator.power(1)
         self.assertTrue(res)
 
 
 class TestFibonacci(unittest.TestCase):
+    def setUp(self):
+        self.self.calculator = self.calculator()
+
     def test_fibNeg(self):
-        self.assertRaises(Exception,Calculator.factorial(-1))
+        self.assertRaises(Exception,self.calculator.factorial(-1))
 
     def test_fib(self):
-        res = Calculator.fibonacci(6)
+        res = self.calculator.fibonacci(6)
         self.assertEqual(res,5)
 
 
