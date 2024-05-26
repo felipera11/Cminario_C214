@@ -42,7 +42,7 @@ jobs:
 
     - name: Generate Report
       run: |
-        python -m coverage report > coverage_report.txt
+        python -m coverage report -m > coverage_report.txt
 
     - name: Upload Report
       uses: actions/upload-artifact@v2
