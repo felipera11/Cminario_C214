@@ -58,7 +58,7 @@ class TestDiv(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
     def test_porZero(self):
-        self.assertRaises(Exception,self.calculator.divide(1,0))
+        self.assertRaises(ValueError,self.calculator.divide(1,0))
 
     def test_div(self):
         res = self.calculator.divide(150,30)
@@ -78,7 +78,7 @@ class TestDiv(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_raizNeg(self):
-        self.assertRaises(Exception,self.calculator.squareRoot(-9))
+        self.assertRaises(ValueError,self.calculator.squareRoot(-9))
 
     def test_raiz(self):
         res = self.calculator.squareRoot(9)
@@ -99,7 +99,7 @@ class TestFatorial(unittest.TestCase):
         self.calculator = Calculator()  
 
     def test_fatNeg(self):
-        self.assertRaises(Exception,self.calculator.factorial(-1))
+        self.assertRaises(ValueError,self.calculator.factorial(-1))
 
     def test_fat(self):
         res = self.calculator.factorial(5)
@@ -120,11 +120,11 @@ class TestFibonacci(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_fibNeg(self):
-        self.assertRaises(Exception,self.calculator.factorial(-1))
+        self.assertRaises(ValueError,self.calculator.factorial(-1))
 
     def test_fib(self):
         res = self.calculator.fibonacci(6)
-        self.assertEqual(res,5)
+        self.assertEqual(res,8)
 
 
 ''' 
