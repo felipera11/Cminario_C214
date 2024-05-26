@@ -58,7 +58,8 @@ class TestDiv(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
     def test_porZero(self):
-        self.assertRaises(ValueError,self.calculator.divide(1,0))
+        with self.assertRaises(ValueError):
+            self.calculator.divide(1,0)
 
     def test_div(self):
         res = self.calculator.divide(150,30)
