@@ -43,3 +43,11 @@ class TestMul(unittest.TestCase):
     def test_umNeg(self):
         res = Calculator.multiply(-3,5)
         self.assertEqual(res,-15)
+
+
+class TestDiv(unittest.TestCase):
+    def test_porZero(self):
+        self.assertRaises(Exception,Calculator.divide(1,0))
+
+    def test_porZero(self):
+        res = Calculator.divide(150,30)
