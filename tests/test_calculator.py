@@ -164,7 +164,7 @@ class TestPalindrome(unittest.TestCase):
 
     def test_Palind(self):
         res = self.calculator.isPalindrome("socorram me subi no onibus em marrocos")
-        self.assertFTrue(res)
+        self.assertTrue(res)
 
     @unittest.expectedFailure
     def test_naoPalind(self):
@@ -177,14 +177,25 @@ class TestPos(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
 
-    def test_Pos(self):
-        res = self.calculator.isPositive(100)
+    def test_Neg(self):
+        res = self.calculator.isPositive(-28)
         self.assertFalse(res)
 
-    def test_Neg(self):
-        res = self.calculator.isPositive(999)
+    def test_Pos(self):
+        res = self.calculator.isPositive(28)
         self.assertTrue(res)
 
+class TestNeg(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_Neg(self):
+        res = self.calculator.isNegative(-28)
+        self.assertTrue(res)
+
+    def test_Pos(self):
+        res = self.calculator.isNegative(28)
+        self.assertFalse(res)
 
 
 
