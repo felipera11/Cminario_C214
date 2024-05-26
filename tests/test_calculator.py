@@ -4,7 +4,7 @@ from src.calculator import Calculator
 
 class TestAdd(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     def test_sumPos(self):
         res = self.calculator.add(3,5)
@@ -18,7 +18,7 @@ class TestAdd(unittest.TestCase):
 
 class TestSub(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
     def test_subPrimMenor(self):
         res = self.calculator.subtract(3,8)
         self.assertEqual(res,-2)
@@ -35,7 +35,7 @@ class TestSub(unittest.TestCase):
 
 class TestMul(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     def test_porZero1(self):
         res = self.calculator.multiply(0,8)
@@ -56,7 +56,7 @@ class TestMul(unittest.TestCase):
 
 class TestDiv(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
     def test_porZero(self):
         self.assertRaises(Exception,self.calculator.divide(1,0))
 
@@ -66,7 +66,7 @@ class TestDiv(unittest.TestCase):
 
 class TestSquare(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     def test_quadrado(self):
         res = self.calculator.square(8)
@@ -75,7 +75,7 @@ class TestSquare(unittest.TestCase):
 
 class TestDiv(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     def test_raizNeg(self):
         self.assertRaises(Exception,self.calculator.squareRoot(-9))
@@ -87,7 +87,7 @@ class TestDiv(unittest.TestCase):
 
 class TestPot(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     def test_potencia(self):
         res = self.calculator.power(3,3)
@@ -96,7 +96,7 @@ class TestPot(unittest.TestCase):
 
 class TestFatorial(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()  
+        self.calculator = Calculator()  
 
     def test_fatNeg(self):
         self.assertRaises(Exception,self.calculator.factorial(-1))
@@ -107,7 +107,7 @@ class TestFatorial(unittest.TestCase):
 
 class TestPot(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     @unittest.expectedFailure
     def test_primo(self):
@@ -117,7 +117,7 @@ class TestPot(unittest.TestCase):
 
 class TestFibonacci(unittest.TestCase):
     def setUp(self):
-        self.self.calculator = Calculator()
+        self.calculator = Calculator()
 
     def test_fibNeg(self):
         self.assertRaises(Exception,self.calculator.factorial(-1))
