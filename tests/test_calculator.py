@@ -2,12 +2,15 @@ import unittest
 from src.calculator import Calculator
 
 class TestAdd(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
     def test_sumPos(self):
-        res = Calculator.add(3,5)
+        res = self.calculator.add(3,5)
         self.assertEqual(res,8)
     
     def test_sumNeg(self):
-        res = Calculator.add(4,-1)
+        res = self.calculator.add(4,-1)
         self.assertEqual(res,3)
 
 
