@@ -80,6 +80,16 @@ class TestFatorial(unittest.TestCase):
         res = Calculator.factorial(5)
         self.assertEqual(res,120)
 
+class TestPot(unittest.TestCase):
+    @unittest.expectedFailure
+    def test_primo(self):
+        res = Calculator.power(1)
+        self.assertTrue(res)
+
+
+
+
+
 
 ''' def isPrime(self, a):
         if a < 2:
