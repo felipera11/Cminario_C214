@@ -49,5 +49,73 @@ class TestDiv(unittest.TestCase):
     def test_porZero(self):
         self.assertRaises(Exception,Calculator.divide(1,0))
 
-    def test_porZero(self):
+    def test_div(self):
         res = Calculator.divide(150,30)
+
+class TestSquare(unittest.TestCase):
+    def test_quadrado(self):
+        res = Calculator.square(8)
+        self.assertEqual(res,64)
+
+class TestDiv(unittest.TestCase):
+    def test_raizNeg(self):
+        self.assertRaises(Exception,Calculator.squareRoot(-9))
+
+    def test_raiz(self):
+        res = Calculator.squareRoot(9)
+        self.assertEqual(res,3)
+
+
+
+''' 
+    def power(self, a, b):
+        return a ** b
+    
+    def factorial(self, a):
+        if a < 0:
+            raise ValueError("Factorial of negative number")
+        if a == 0:
+            return 1
+        return a * self.factorial(a - 1)
+    
+    def isPrime(self, a):
+        if a < 2:
+            return False
+        for i in range(2, a):
+            if a % i == 0:
+                return False
+        return True
+    
+    def fibonacci(self, a):
+        if a < 0:
+            raise ValueError("Fibonacci of negative number")
+        if a == 0:
+            return 0
+        if a == 1:
+            return 1
+        return self.fibonacci(a - 1) + self.fibonacci(a - 2)
+    
+    def isEven(self, a):
+        return a % 2 == 0
+    
+    def isOdd(self, a):
+        return a % 2 != 0
+    
+    def isPalindrome(self, a):
+        return str(a) == str(a)[::-1]
+    
+    def isPositive(self, a):
+        return a > 0
+    
+    def isNegative(self, a):
+        return a < 0
+    
+    def isZero(self, a):
+        return a == 0
+    
+    def isDivisible(self, a, b):
+        return a % b == 0
+    
+    def isMultiple(self, a, b):
+        return b % a == 0
+    '''
