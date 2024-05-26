@@ -163,7 +163,7 @@ class TestPalindrome(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_Palind(self):
-        res = self.calculator.isPalindrome("socorram me subi no onibus em marrocos")
+        res = self.calculator.isPalindrome("osso")
         self.assertTrue(res)
 
     @unittest.expectedFailure
@@ -185,6 +185,7 @@ class TestPos(unittest.TestCase):
         res = self.calculator.isPositive(28)
         self.assertTrue(res)
 
+
 class TestNeg(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
@@ -198,21 +199,40 @@ class TestNeg(unittest.TestCase):
         self.assertFalse(res)
 
 
+class TestZero(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
 
-'''   
-    
-    def isPositive(self, a):
-        return a > 0
-    
-    def isNegative(self, a):
-        return a < 0
-    
-    def isZero(self, a):
-        return a == 0
-    
-    def isDivisible(self, a, b):
-        return a % b == 0
-    
-    def isMultiple(self, a, b):
-        return b % a == 0
-'''
+    def test_Zero(self):
+        res = self.calculator.isZero(0)
+        self.assertTrue(res)
+
+    def test_Float(self):
+        res = self.calculator.isZero(0.5)
+        self.assertFalse(res)
+
+
+class TestDivisor(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_sim(self):
+        res = self.calculator.isDivisible(10,2)
+        self.assertTrue(res)
+
+    def test_nao(self):
+        res = self.calculator.isDivisible(10,3)
+        self.assertFalse(res)
+
+
+class TestMultiplo(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_sim(self):
+        res = self.calculator.isMultiple(14,28)
+        self.assertTrue(res)
+
+    def test_nao(self):
+        res = self.calculator.isMultiple(5,31)
+        self.assertFalse(res)
