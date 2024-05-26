@@ -20,6 +20,7 @@ def choose_operation():
     print("16. Is zero")
     print("17. Is divisible")
     print("18. Is multiple")
+    print("Enter operation number:")
     return int(input())
 
 def main():
