@@ -74,7 +74,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(res,64)
 
 
-class TestDiv(unittest.TestCase):
+class TestRaiz(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
 
@@ -108,13 +108,13 @@ class TestFatorial(unittest.TestCase):
         res = self.calculator.factorial(5)
         self.assertEqual(res,120)
 
-class TestPot(unittest.TestCase):
+class TestPrimo(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
 
     @unittest.expectedFailure
     def test_primo(self):
-        res = self.calculator.power(1)
+        res = self.calculator.isPrime(1)
         self.assertTrue(res)
 
 
@@ -124,7 +124,7 @@ class TestFibonacci(unittest.TestCase):
 
     def test_fibNeg(self):
         with self.assertRaises(ValueError):
-            self.calculator.factorial(-1)
+            self.calculator.fibonacci(-1)
 
     def test_fib(self):
         res = self.calculator.fibonacci(6)
@@ -137,7 +137,7 @@ class TestPar(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_evenFalse(self):
-        res = self.calculator.fibonacci(3)
+        res = self.calculator.isEven(3)
         self.assertFalse(res)
 
     def test_evenTrue(self):
@@ -149,12 +149,12 @@ class TestImpar(unittest.TestCase):
     def setUp(self):
         self.calculator = Calculator()
 
-    def test_evenFalse(self):
-        res = self.calculator.fibonacci(100)
+    def test_oddFalse(self):
+        res = self.calculator.isOdd(100)
         self.assertFalse(res)
 
-    def test_evenTrue(self):
-        res = self.calculator.isEven(999)
+    def test_oddTrue(self):
+        res = self.calculator.isOdd(999)
         self.assertTrue(res)
 
 
@@ -168,10 +168,22 @@ class TestPalindrome(unittest.TestCase):
 
     @unittest.expectedFailure
     def test_naoPalind(self):
-        res = self.calculator.isEven("hello world")
+        res = self.calculator.isPalindrome("hello world")
         self.assertTrue(res)
 
 
+
+class TestPos(unittest.TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
+    def test_Pos(self):
+        res = self.calculator.isPositive(100)
+        self.assertFalse(res)
+
+    def test_Neg(self):
+        res = self.calculator.isPositive(999)
+        self.assertTrue(res)
 
 
 
