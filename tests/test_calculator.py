@@ -79,7 +79,8 @@ class TestDiv(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_raizNeg(self):
-        self.assertRaises(ValueError,self.calculator.squareRoot(-9))
+        with self.assertRaises(ValueError):
+            self.calculator.squareRoot(-9)
 
     def test_raiz(self):
         res = self.calculator.squareRoot(9)
@@ -100,7 +101,8 @@ class TestFatorial(unittest.TestCase):
         self.calculator = Calculator()  
 
     def test_fatNeg(self):
-        self.assertRaises(ValueError,self.calculator.factorial(-1))
+        with self.assertRaises(ValueError):
+            self.calculator.factorial(-1)
 
     def test_fat(self):
         res = self.calculator.factorial(5)
@@ -121,7 +123,8 @@ class TestFibonacci(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_fibNeg(self):
-        self.assertRaises(ValueError,self.calculator.factorial(-1))
+        with self.assertRaises(ValueError):
+            self.calculator.factorial(-1)
 
     def test_fib(self):
         res = self.calculator.fibonacci(6)
