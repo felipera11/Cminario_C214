@@ -52,8 +52,6 @@ To get started with this project, follow these steps:
 
 To run the code, use the following command:
 
-    ```bash
-    python src/main.py
     ```
 
 ## Running the Tests
