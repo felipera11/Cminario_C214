@@ -63,7 +63,7 @@ jobs:
 
     - name: Build package
       run: |
-        python -m pyinstaller --onefile src/main.py
+        pyinstaller --onefile src/main.py
 
     - name: Upload package
       uses: actions/upload-artifact@v2
