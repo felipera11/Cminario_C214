@@ -204,7 +204,7 @@ class TestZero(unittest.TestCase):
         self.calculator = Calculator()
 
     def test_Zero(self):
-        res = self.calculator.isZero(0)
+        res = self.calculator.isZero(1)
         self.assertTrue(res)
 
     def test_Float(self):
